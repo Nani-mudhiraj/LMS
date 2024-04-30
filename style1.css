@@ -1,0 +1,113 @@
+header img{
+    height: 200px;
+    width: 200px;
+}
+header h1{
+    color: rgb(245, 10, 245);
+    display: flex;
+   justify-content: center;
+   position: relative;
+   font-size: 40px;
+   top:-199px;
+}
+header h2{
+    color: blueviolet;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    font-size: 50px;
+    top: -200px;
+ }
+ .navbar{
+    background-color:gold ;
+       height:30px;
+       position: relative;
+       top: -200px;
+ }
+ .navbar a{
+    position: relative;
+    left: 50%;
+    text-decoration: none;
+    margin-left: 60px;
+    text-align: center;
+ }
+ .navbar a:hover{
+    color: aqua;
+    background-color: mediumseagreen;
+    border-radius: 20px;
+ }
+ .branch{
+    text-align: center;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px auto;
+    width: 100px;
+    height: 250px;
+ }
+.branch button{
+    display: block;
+    width: 60%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    /* cursor: pointer; */
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+    position: relative;
+    top: -250px;
+}
+.branch button:hover{
+    background-color: green;
+    /* background-image:url(imgs/logo.jpeg) */
+}
+.branch-box {
+    display: inline-block;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 20px auto;
+    position: relative;
+    top: -250px;
+}
+.letter-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    margin: 0 2px;
+    transform-origin: left top;
+    transform: rotate(--90deg);
+    position: relative;
+    bottom: -250px;
+    left: 39px;
+    letter-spacing: 10px;
+    color:rebeccapurple;
+    border: 3px solid gold;
+    
+}
+.branch-text {
+    font-size: 18px;
+    margin-right: 20px;
+    display: inline-block;
+}
+label{
+    color: #007bff;
+    font-size: 20px;
+    font-weight: 600;
+}
+::placeholder{
+    color: aqua;
+}
+button{
+    background-color: #007bff;
+}
+button:hover{
+    background-color: goldenrod;
+    position: relative;
+    left: 40px;
+}
