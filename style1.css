@@ -18,32 +18,15 @@ header h2{
     font-size: 50px;
     top: -200px;
  }
- .navbar{
-    background-color:gold ;
-       height:30px;
-       position: relative;
-       top: -200px;
- }
- .navbar a{
-    position: relative;
-    left: 50%;
-    text-decoration: none;
-    margin-left: 60px;
-    text-align: center;
- }
- .navbar a:hover{
-    color: aqua;
-    background-color: mediumseagreen;
-    border-radius: 20px;
- }
  .branch{
-    text-align: center;
-    border: 2px solid #ccc;
+    /* text-align: center; */
+    border: 2px solid #141313;
     border-radius: 5px;
     padding: 10px;
-    margin: 10px auto;
+    margin: 10px ;
     width: 100px;
     height: 250px;
+    right: 600px;
  }
 .branch button{
     display: block;
@@ -54,15 +37,12 @@ header h2{
     background-color: #007bff;
     color: #fff;
     font-size: 16px;
-    /* cursor: pointer; */
+    cursor: pointer;
     transition: background-color 0.3s ease;
     border-radius: 5px;
     position: relative;
-    top: -250px;
-}
-.branch button:hover{
-    background-color: green;
-    /* background-image:url(imgs/logo.jpeg) */
+    top: -265px;
+    right:10px
 }
 .branch-box {
     display: inline-block;
@@ -111,3 +91,35 @@ button:hover{
     position: relative;
     left: 40px;
 }
+#popupMenu{
+    background-color:gold ;
+       height:30px;
+       position: relative;
+       top: -200px;
+}
+#popupMenu a{
+    position: relative;
+    left: 50%;
+    text-decoration: none;
+    margin-left: 60px;
+    text-align: center;
+    transition: all 0.5s;
+}
+#popupMenu a:hover{
+    color: aqua;
+    background-color: mediumseagreen;
+    border-radius: 20px;
+ }
+ .disp{
+    display: none;
+ }
+ .nodisp{
+    display: none;
+ }
+ .register{
+    background-color: rgb(130, 7, 7);
+    position: absolute;
+    right: 10px;
+    font-size: 15px;
+    padding: 5px;
+ }
