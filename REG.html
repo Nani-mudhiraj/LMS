@@ -2,19 +2,20 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('Compile') {
             steps {
-                echo 'Hello World'
+                script {
+                    // Compile the Java program
+                    bat 'javac REG.html'
+                }
             }
         }
-        stage('build'){
-            steps{
-            echo 'building here'
-        }
-        }
-        stage('deploy'){
-            steps{
-                echo 'deploy here'
+        stage('Run') {
+            steps {
+                script {
+                    // Run the Java program
+                    bat 'java Add'
+                }
             }
         }
     }
