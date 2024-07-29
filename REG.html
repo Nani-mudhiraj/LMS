@@ -1,26 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
-    <link rel="stylesheet" href="style1.css">
-</head>
-<body>
-    <label >Name
-        <input type="text" name="Name" placeholder="Enter Name">
-    </label>
-    <br>
-    <br>
-    <label>Email
-        <input type="email" name="Email" placeholder="Enter Email">
-    </label>
-    <br>
-    <br>
-    <label>Password
-        <input type="password" name="Password" placeholder="Enter Password">
-    </label>
-    <br><br>
-    <button>Submit</button>
-</body>
-</html>
+pipeline {
+    agent any
+
+    tools {
+        maven "M3"  // Ensure "M3" is configured in Jenkins Global Tool Configuration
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                // Checkout the GitHub repository
+                git 'https://github.com/Nani-mudhiraj/LMS.git'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                script {
+                    if (isUnix()) {
+                        sh "mvn -Dmaven.test.failure.ignore=true clean package"
+                    } else {
+                        bat "mvn -Dmaven.test.failure.ignore=true clean package"
+                    }
+                }
+            }
+
+            post {
+                success {
+                    junit '**/target/surefire-reports/TEST-*.xml'
+                    archiveArtifacts 'target/*.jar'
+                }
+            }
+        }
+    }
+}
