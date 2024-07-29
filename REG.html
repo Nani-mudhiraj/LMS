@@ -1,45 +1,20 @@
 pipeline {
     agent any
 
-    tools {
-        maven "M3"  // Ensure "M3" is configured in Jenkins Global Tool Configuration
-    }
-
     stages {
-        stage('Checkout') {
+        stage('Hello') {
             steps {
-                git 'https://github.com/your-repo/simple-java-project.git'
+                echo 'Hello World'
             }
         }
-
-        stage('Build') {
-            steps {
-                script {
-                    if (isUnix()) {
-                        sh "mvn clean package"
-                    } else {
-                        bat "mvn clean package"
-                    }
-                }
-            }
+        stage('build'){
+            steps{
+            echo 'building here'
         }
-
-        stage('Test') {
-            steps {
-                script {
-                    if (isUnix()) {
-                        sh "mvn test"
-                    } else {
-                        bat "mvn test"
-                    }
-                }
-            }
-
-            post {
-                success {
-                    junit '**/target/surefire-reports/TEST-*.xml'
-                    archiveArtifacts 'target/*.jar'
-                }
+        }
+        stage('deploy'){
+            steps{
+                echo 'deploy here'
             }
         }
     }
