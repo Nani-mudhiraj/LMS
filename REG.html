@@ -8,8 +8,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                // Checkout the GitHub repository
-                git 'https://github.com/Nani-mudhiraj/LMS.git'
+                git 'https://github.com/your-repo/simple-java-project.git'
             }
         }
 
@@ -17,9 +16,21 @@ pipeline {
             steps {
                 script {
                     if (isUnix()) {
-                        sh "mvn -Dmaven.test.failure.ignore=true clean package"
+                        sh "mvn clean package"
                     } else {
-                        bat "mvn -Dmaven.test.failure.ignore=true clean package"
+                        bat "mvn clean package"
+                    }
+                }
+            }
+        }
+
+        stage('Test') {
+            steps {
+                script {
+                    if (isUnix()) {
+                        sh "mvn test"
+                    } else {
+                        bat "mvn test"
                     }
                 }
             }
